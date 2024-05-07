@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mad Libs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    
+    form {
+      background-color: red;
+      padding: 20px;
+      border-radius: 5px;
+  
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mad Libs</h1>
+  <form>
+    <label for="noun">Noun:</label>
+    <input type="text" id="noun" name="noun">
+    
+    <label for="adjective">Adjective:</label>
+    <input type="text" id="adjective" name="adjective">
+    
+    <label for="verb">Verb:</label>
+    <input type="text" id="verb" name="verb">
+    
+    <label for="adverb">Adverb:</label>
+    <input type="text" id="adverb" name="adverb">
+    
+    <button type="button" onclick="generateStory()">Generate Your Tale</button>
+  </form>
+  
+  <div id="story"></div>
+  
+  <script>
+    function generateStory() {
+      var noun = document.getElementById("noun").value;
+      var adjective = document.getElementById("adjective").value;
+      var verb = document.getElementById("verb").value;
+      var adverb = document.getElementById("adverb").value;
+      
+      var story = "The " + adjective + " " + noun +  " was "  + verb + " very " + adverb + ".";
+      
+      document.getElementById("story").innerHTML = story;
+    }
+  </script>
+</body>
+</html>
